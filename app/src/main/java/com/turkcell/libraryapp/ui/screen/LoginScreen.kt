@@ -16,6 +16,7 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -38,7 +39,9 @@ import com.turkcell.libraryapp.ui.viewmodel.AuthViewModel
 
 
 @Composable
-fun LoginScreen(navController: NavHostController) {
+fun LoginScreen(onNavigateToRegister: () -> Unit,
+                onLoginSuccess :(role : String) -> Unit,
+                authViewModel: AuthViewModel) {
 
 
     val authViewModel: AuthViewModel = viewModel() // Navigasyon ekranına taşı.
@@ -48,6 +51,14 @@ fun LoginScreen(navController: NavHostController) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
+
+
+    LaunchedEffect(authState) {
+        if (authState is AuthState.Success) {
+            onLoginSuccess((authState as AuthState.Success).role)
+            authViewModel.resetState()
+        }
+    }
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -103,13 +114,12 @@ fun LoginScreen(navController: NavHostController) {
 
 
 
-        TextButton(onClick = { navController.navigate(Screen.Register.route)}) {
-            Text(
-                text = "Kayıt ol",
-                color = Color.Gray,
-                fontSize = 20.sp
-            )
+        TextButton(onClick = {
+            onNavigateToRegister()
+        },) {
+            Text("Hesabınız yok mu? Kayıt Ol")
         }
+
     }
 }
 
@@ -117,6 +127,6 @@ fun LoginScreen(navController: NavHostController) {
 @Preview(showBackground = true)
 @Composable
 fun LoginScreenPreview() {
-    LoginScreen(rememberNavController())
+//    LoginScreen({})
 
 }

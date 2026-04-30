@@ -1,33 +1,53 @@
 package com.turkcell.libraryapp.data.repository
 
+import com.turkcell.libraryapp.data.model.Profile
+import com.turkcell.libraryapp.data.supabase.supabase
 import io.github.jan.supabase.auth.OtpType
+import io.github.jan.supabase.auth.auth
+import io.github.jan.supabase.auth.providers.builtin.Email
+import io.github.jan.supabase.postgrest.postgrest
 import kotlinx.coroutines.delay
 import kotlin.random.Random
 
 class AuthRepository {
     suspend fun signIn(email: String, password: String): Result<Unit> = runCatching {
-        delay(2000) // dışarıya istek atıyomuş gibi
-
-        val isSuccess = Random.nextBoolean() // %50 %50
-        if (isSuccess)
-            Unit
-        else
-            throw Exception("Fake login failed")
-    }
-
-    suspend fun register(email: String, password: String, repeatPassword: String, username: String): Result<Unit> =
-        runCatching {
-            delay(2000)
-
-
-            if (username.lowercase() == "admin") {
-                throw Exception("Bu kullanıcı adı zaten alınmış!")
-            }
-
-
-
-            Unit
+        supabase.auth.signInWith(Email){
+            this.email = email
+            this.password = password
         }
 
+
+    }
+
+    suspend fun register(email: String, password: String, studentNo: String?, username: String): Result<Unit> =
+        runCatching {
+          supabase.auth.signUpWith(Email){
+              this.email = email
+              this.password = password
+
+          }
+
+
+            var userId = supabase.auth.currentUserOrNull()?.id ?: error("kullanıcı bulunamadı")
+
+
+            supabase.postgrest["profiles"].insert(
+                Profile(userId, "student", username, studentNo)
+            )
+        }
+
+
+
+
+    fun getCurrentUserId() : String?
+    {
+        return supabase.auth.currentUserOrNull()?.id;
+    }
+
+    suspend fun getProfile(userId: String): Profile? = runCatching {
+        supabase.postgrest["profiles"]
+            .select { filter { eq("user_id", userId) }  }
+            .decodeSingle<Profile>()
+    }.getOrNull()
 
 }

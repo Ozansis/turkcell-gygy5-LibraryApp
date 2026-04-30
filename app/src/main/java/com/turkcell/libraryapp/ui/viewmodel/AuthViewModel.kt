@@ -2,6 +2,7 @@ package com.turkcell.libraryapp.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.turkcell.libraryapp.data.model.Profile
 import com.turkcell.libraryapp.data.repository.AuthRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -23,19 +24,26 @@ class AuthViewModel : ViewModel() {
     private val _authState = MutableStateFlow<AuthState>(AuthState.Idle)
     val authState: StateFlow<AuthState> = _authState;
 
+
+
+
+    private val _profile = MutableStateFlow<Profile?>(null)
+    val profile: StateFlow<Profile?> = _profile;
     fun signIn(email: String, password: String) {
         viewModelScope.launch {
             _authState.value = AuthState.Loading
             repository
                 .signIn(email, password)
-                .onSuccess { result -> _authState.value = AuthState.Success("student") }
+                .onSuccess {
+                    loadProfileAndSetSuccess() // register tarafıyla burada kod tekrarı olduğu için tek fonksiyon yazıldı
+                }
                 .onFailure { ex ->
                     _authState.value = AuthState.Error(ex.message ?: "Giriş başarısız")
                 }
         }
     }
 
-    fun register(email: String, password: String, repeatPassword: String, username: String) {
+    fun register(email: String, password: String, studentNo: String?, username: String) {
 
         if (email.isBlank() || password.isBlank() || username.isBlank()) {
 
@@ -43,21 +51,35 @@ class AuthViewModel : ViewModel() {
             return
         }
 
-        if (password != repeatPassword) {
-            _authState.value = AuthState.Error("Şifre eşleşmiyor")
-            return
-        }
+
 
         viewModelScope.launch {
             _authState.value = AuthState.Loading
-
-            repository.register(email, password, repeatPassword, username)
-                .onSuccess { _authState.value = AuthState.Success("student") }
-                .onFailure { ex->_authState.value = AuthState.Error(ex.message ?: "Kayıt Başarısız") }
-
-
+            repository.register(email, password, studentNo, username)
+                .onSuccess {
+                   loadProfileAndSetSuccess()
+                }
+                .onFailure { ex ->
+                    _authState.value = AuthState.Error(ex.message ?: "Kayıt Başarısız")
+                }
         }
 
 
+    }
+
+    fun resetState(){
+        _authState.value = AuthState.Idle
+    }
+
+
+    private suspend fun loadProfileAndSetSuccess() {
+        val userId = repository.getCurrentUserId()
+        if (userId != null) {
+            val profile = repository.getProfile(userId)
+            _profile.value = profile
+            _authState.value = AuthState.Success("student")
+        } else {
+            _authState.value = AuthState.Error("Profil bulunamadı.")
+        }
     }
 }

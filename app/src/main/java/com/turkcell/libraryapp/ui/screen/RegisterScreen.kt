@@ -37,24 +37,22 @@ import com.turkcell.libraryapp.ui.viewmodel.AuthViewModel
 
 
 @Composable
-fun RegisterScreen(navController: NavHostController) {
+fun RegisterScreen(onNavigateToLogin: () -> Unit, authViewModel: AuthViewModel) {
 
 
-    val authViewModel: AuthViewModel = viewModel() // Navigasyon ekranına taşı.
+//    val authViewModel: AuthViewModel = viewModel() // Navigasyon ekranına taşı.
     val authState by authViewModel.authState.collectAsState()
 
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var name by remember { mutableStateOf("") }
-    var passwordRepeat by remember { mutableStateOf("") }
+    var studentno by remember { mutableStateOf("") }
 
 
 
     LaunchedEffect(authState) {
         if (authState is AuthState.Success) {
-            navController.navigate(Screen.Login.route) {
-                popUpTo(Screen.Login.route) { inclusive = true }
-            }
+          onNavigateToLogin()
         }
     }
 
@@ -101,9 +99,9 @@ fun RegisterScreen(navController: NavHostController) {
         Spacer(modifier = Modifier.height(8.dp))
         OutlinedTextField(
             modifier = Modifier.fillMaxWidth(),
-            value = passwordRepeat,
-            label = { Text("Şifre tekrar") },
-            onValueChange = { value -> passwordRepeat = value },
+            value = studentno,
+            label = { Text("Student No") },
+            onValueChange = { value -> studentno = value },
             singleLine = true,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
             visualTransformation = PasswordVisualTransformation()
@@ -122,7 +120,7 @@ fun RegisterScreen(navController: NavHostController) {
             }
         } else {
             Button(onClick = {
-                authViewModel.register(email, password, passwordRepeat, name)
+                authViewModel.register(email, password, studentno, name)
 
             }, modifier = Modifier.fillMaxWidth()) {
                 Text("Kayıt ol")
@@ -143,7 +141,7 @@ fun RegisterScreen(navController: NavHostController) {
 @Composable
 fun RegisterScreenPreview() {
 
-    RegisterScreen(rememberNavController())
+//    RegisterScreen(rememberNavController())
 
 
 }
