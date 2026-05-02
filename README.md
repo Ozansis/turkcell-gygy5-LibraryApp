@@ -9,15 +9,27 @@ Bu proje, Android uygulama geliştirme eğitimi kapsamında, modern teknolojiler
 *   **Profilim:** Kullanıcının aktif olarak elinde bulunan kitapları ve iade tarihini (kaç gün kaldığını) görmesi.
 *   **Kiralama Geçmişi:** Daha önce alınan kitapların listesi ve iade durumlarının (Returned, Overdue vb.) takibi.
 
+## 📸 Demo
+
+<video src="https://github.com/user-attachments/assets/ae46788a-0b8f-4130-a8e4-99356e838fce" width="320" height="640" controls></video>
+
+
+
 ## 📸 Ekran Görüntüleri
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/e93fd6f3-b6b2-40e7-aa66-573d1528a54a" width="160"/>
-  <img src="https://github.com/user-attachments/assets/94b2674a-3a0d-4117-b8c6-c478a81f652d" width="160"/>
   <img src="https://github.com/user-attachments/assets/fda327e0-40bd-43d2-95a2-6980cd250037" width="160"/>
-  <img src="https://github.com/user-attachments/assets/05232de9-0e9f-45e2-90d7-4383f276e7e9" width="160"/>
-  <img src="https://github.com/user-attachments/assets/c65f8a8d-e16d-48e5-9a4f-3730f285e8ee" width="160"/>
+  
   <img src="https://github.com/user-attachments/assets/8b7ff843-3ac1-493d-81c3-716394d6d9c2" width="160"/>
+  
+  <img src="https://github.com/user-attachments/assets/e93fd6f3-b6b2-40e7-aa66-573d1528a54a" width="160"/>
+  
+  <img src="https://github.com/user-attachments/assets/94b2674a-3a0d-4117-b8c6-c478a81f652d" width="160"/>
+
+  <img src="https://github.com/user-attachments/assets/05232de9-0e9f-45e2-90d7-4383f276e7e9" width="160"/>
+  
+  <img src="https://github.com/user-attachments/assets/c65f8a8d-e16d-48e5-9a4f-3730f285e8ee" width="160"/>
+ 
 </div>
 
 ## 🛠️ Kullanılan Teknolojiler
