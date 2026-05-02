@@ -13,16 +13,14 @@ Bu proje, Android uygulama geliştirme eğitimi kapsamında, modern teknolojiler
 
 ## 📸 Ekran Görüntüleri
 
-<p align="center">
-  <img src="![Uploading WhatsApp Image 2026-05-02 at 09.25.27.jpeg…]()g" width="250" title="Splash & Login">
-  <img src="screenshots/WhatsApp Image 2026-05-02 at 09.25.28.jpeg" width="250" title="Home Page">
-  <img src="screenshots/WhatsApp Image 2026-05-02 at 09.25.27 (1).jpeg" width="250" title="Book Detail">
-</p>
-<p align="center">
-  <img src="screenshots/WhatsApp Image 2026-05-02 at 09.25.27 (2).jpeg" width="250" title="Profile">
-  <img src="screenshots/WhatsApp Image 2026-05-02 at 09.25.27 (3).jpeg" width="250" title="History">
-  <img src="screenshots/WhatsApp Image 2026-05-02 at 09.25.28 (1).jpeg" width="250" title="Register">
-</p>
+<img width="945" height="2048" alt="WhatsApp Image 2026-05-02 at 09 25 28" src="https://github.com/user-attachments/assets/e93fd6f3-b6b2-40e7-aa66-573d1528a54a" />
+<img width="945" height="2048" alt="WhatsApp Image 2026-05-02 at 09 25 28 (1)" src="https://github.com/user-attachments/assets/94b2674a-3a0d-4117-b8c6-c478a81f652d" />
+<img width="1080" height="2340" alt="WhatsApp Image 2026-05-02 at 09 25 27" src="https://github.com/user-attachments/assets/fda327e0-40bd-43d2-95a2-6980cd250037" />
+<img width="945" height="2048" alt="WhatsApp Image 2026-05-02 at 09 25 27 (3)" src="https://github.com/user-attachments/assets/05232de9-0e9f-45e2-90d7-4383f276e7e9" />
+<img width="945" height="2048" alt="WhatsApp Image 2026-05-02 at 09 25 27 (2)" src="https://github.com/user-attachments/assets/c65f8a8d-e16d-48e5-9a4f-3730f285e8ee" />
+<img width="1080" height="2340" alt="WhatsApp Image 2026-05-02 at 09 25 27 (1)" src="https://github.com/user-attachments/assets/8b7ff843-3ac1-493d-81c3-716394d6d9c2" />
+
+
 
 ## 🛠️ Kullanılan Teknolojiler
 
