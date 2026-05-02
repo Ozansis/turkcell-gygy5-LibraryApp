@@ -25,9 +25,15 @@ Bu projede güncel Android geliştirme standartları uygulanmıştır:
 *   **Kotlinx Serialization:** JSON veri dönüşümleri.
 *   **Navigation Compose:** Sayfalar arası akış yönetimi.
 
-  ##Arayüz  
-<video src="https://github.com/user-attachments/assets/96e970b1-c7ad-4cca-999c-5274c55d2dcf" width="320" height="640" controls></video>
+   
+    
 
+## 🎥 Uygulama İçi Görüntüler / Video
+<video src="
+
+https://github.com/user-attachments/assets/d51ab80f-3410-4aec-849c-6b7fd8e43e68
+
+" width="320" height="640" controls></video>
 
 ## 📂 Proje Yapısı
 
@@ -44,5 +50,4 @@ Bu projede güncel Android geliştirme standartları uygulanmıştır:
 3.  Gradle senkronizasyonunu yapın.
 4.  Uygulamayı bir emülatörde veya fiziksel cihazda çalıştırın.
 
----
-*Bu proje "Athenaeum Modern" tasarım sistemi prensipleriyle, modern kütüphane estetiği gözetilerek geliştirilmiştir.*
+
