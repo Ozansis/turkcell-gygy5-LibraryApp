@@ -29,11 +29,7 @@ Bu projede güncel Android geliştirme standartları uygulanmıştır:
     
 
 ## 🎥 Uygulama İçi Görüntüler / Video
-<video src="
-
-https://github.com/user-attachments/assets/d51ab80f-3410-4aec-849c-6b7fd8e43e68
-
-" width="320" height="640" controls></video>
+<video src="https://github.com/user-attachments/assets/d51ab80f-3410-4aec-849c-6b7fd8e43e68" width="320" height="640" controls></video>
 
 ## 📂 Proje Yapısı
 
