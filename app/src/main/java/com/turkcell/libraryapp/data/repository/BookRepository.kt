@@ -34,7 +34,7 @@ class BookRepository {
             set("category", updatedBook.category)
             set("page_count", updatedBook.pageCount)
             set("total_copies", updatedBook.totalCopies)
-            set("available_copies", updatedBook.avaiableCopies)
+            set("available_copies", updatedBook.availableCopies)
         }) {
             filter {
                 eq("id", id)

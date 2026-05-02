@@ -67,6 +67,7 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
 
     implementation("androidx.compose.material:material-icons-extended")
+    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.6.1")
 
 
     implementation(libs.supabase.bom)

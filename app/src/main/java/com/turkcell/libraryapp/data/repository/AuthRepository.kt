@@ -11,7 +11,7 @@ import kotlin.random.Random
 
 class AuthRepository {
     suspend fun signIn(email: String, password: String): Result<Unit> = runCatching {
-        supabase.auth.signInWith(Email){
+        supabase.auth.signInWith(Email) {
             this.email = email
             this.password = password
         }
@@ -19,13 +19,18 @@ class AuthRepository {
 
     }
 
-    suspend fun register(email: String, password: String, studentNo: String?, username: String): Result<Unit> =
+    suspend fun register(
+        email: String,
+        password: String,
+        studentNo: String?,
+        username: String
+    ): Result<Unit> =
         runCatching {
-          supabase.auth.signUpWith(Email){
-              this.email = email
-              this.password = password
+            supabase.auth.signUpWith(Email) {
+                this.email = email
+                this.password = password
 
-          }
+            }
 
 
             var userId = supabase.auth.currentUserOrNull()?.id ?: error("kullanıcı bulunamadı")
@@ -37,16 +42,17 @@ class AuthRepository {
         }
 
 
+    suspend fun signOut() {
+        supabase.auth.signOut()
+    }
 
-
-    fun getCurrentUserId() : String?
-    {
+    fun getCurrentUserId(): String? {
         return supabase.auth.currentUserOrNull()?.id;
     }
 
     suspend fun getProfile(userId: String): Profile? = runCatching {
         supabase.postgrest["profiles"]
-            .select { filter { eq("user_id", userId) }  }
+            .select { filter { eq("user_id", userId) } }
             .decodeSingle<Profile>()
     }.getOrNull()
 

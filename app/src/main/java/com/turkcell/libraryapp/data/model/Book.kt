@@ -12,5 +12,5 @@ data class Book(
     val category: String = "",
     @SerialName("page_count") val pageCount: Int,
     @SerialName("total_copies") val totalCopies: Int = 1,
-    @SerialName("available_copies") val avaiableCopies: Int = 1,
+    @SerialName("available_copies") val availableCopies: Int = 1,
 )
