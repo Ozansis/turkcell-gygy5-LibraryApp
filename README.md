@@ -1,7 +1,3 @@
-
-
-
-
 # 📚 Archivist - Kütüphane Takip Uygulaması
 
 Bu proje, Android uygulama geliştirme eğitimi kapsamında, modern teknolojiler (Jetpack Compose & Supabase) kullanılarak geliştirilmiş bir **Kütüphane Yönetim Sistemi** uygulamasıdır. Temel amacı, bir öğrencinin kütüphanedeki kitapları incelemesi, ödünç alması ve kendi kiralama geçmişini takip etmesini sağlamaktır.
@@ -15,6 +11,19 @@ Bu proje, Android uygulama geliştirme eğitimi kapsamında, modern teknolojiler
 *   **Profilim:** Kullanıcının aktif olarak elinde bulunan kitapları ve iade tarihini (kaç gün kaldığını) görmesi.
 *   **Kiralama Geçmişi:** Daha önce alınan kitapların listesi ve iade durumlarının (Returned, Overdue vb.) takibi.
 
+## 📸 Ekran Görüntüleri
+
+<p align="center">
+  <img src="![Uploading WhatsApp Image 2026-05-02 at 09.25.27.jpeg…]()g" width="250" title="Splash & Login">
+  <img src="screenshots/WhatsApp Image 2026-05-02 at 09.25.28.jpeg" width="250" title="Home Page">
+  <img src="screenshots/WhatsApp Image 2026-05-02 at 09.25.27 (1).jpeg" width="250" title="Book Detail">
+</p>
+<p align="center">
+  <img src="screenshots/WhatsApp Image 2026-05-02 at 09.25.27 (2).jpeg" width="250" title="Profile">
+  <img src="screenshots/WhatsApp Image 2026-05-02 at 09.25.27 (3).jpeg" width="250" title="History">
+  <img src="screenshots/WhatsApp Image 2026-05-02 at 09.25.28 (1).jpeg" width="250" title="Register">
+</p>
+
 ## 🛠️ Kullanılan Teknolojiler
 
 Bu projede güncel Android geliştirme standartları uygulanmıştır:
@@ -24,12 +33,6 @@ Bu projede güncel Android geliştirme standartları uygulanmıştır:
 *   **Kotlin Coroutines & Flow:** Asenkron veri akışları ve performanslı çalışma.
 *   **Kotlinx Serialization:** JSON veri dönüşümleri.
 *   **Navigation Compose:** Sayfalar arası akış yönetimi.
-
-   
-    
-
-## 🎥 Uygulama İçi Görüntüler / Video
-<video src="https://github.com/user-attachments/assets/d51ab80f-3410-4aec-849c-6b7fd8e43e68" width="320" height="640" controls></video>
 
 ## 📂 Proje Yapısı
 
@@ -46,4 +49,5 @@ Bu projede güncel Android geliştirme standartları uygulanmıştır:
 3.  Gradle senkronizasyonunu yapın.
 4.  Uygulamayı bir emülatörde veya fiziksel cihazda çalıştırın.
 
-
+---
+*Bu proje "Athenaeum Modern" tasarım sistemi prensipleriyle, modern kütüphane estetiği gözetilerek geliştirilmiştir.*
