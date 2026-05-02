@@ -1,3 +1,7 @@
+
+
+
+
 # 📚 Archivist - Kütüphane Takip Uygulaması
 
 Bu proje, Android uygulama geliştirme eğitimi kapsamında, modern teknolojiler (Jetpack Compose & Supabase) kullanılarak geliştirilmiş bir **Kütüphane Yönetim Sistemi** uygulamasıdır. Temel amacı, bir öğrencinin kütüphanedeki kitapları incelemesi, ödünç alması ve kendi kiralama geçmişini takip etmesini sağlamaktır.
@@ -20,6 +24,10 @@ Bu projede güncel Android geliştirme standartları uygulanmıştır:
 *   **Kotlin Coroutines & Flow:** Asenkron veri akışları ve performanslı çalışma.
 *   **Kotlinx Serialization:** JSON veri dönüşümleri.
 *   **Navigation Compose:** Sayfalar arası akış yönetimi.
+
+  ##Arayüz  
+<video src="https://github.com/user-attachments/assets/96e970b1-c7ad-4cca-999c-5274c55d2dcf" width="320" height="640" controls></video>
+
 
 ## 📂 Proje Yapısı
 
